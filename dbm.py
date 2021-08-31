@@ -29,8 +29,11 @@ class dBm:
         vrms = sqrt(50 * db)
         watt = db
         vpp = sqrt(100 * db) * 2
-        return (self.dbm, vp, vrms, watt, vpp)
+        return self.dbm, vp, vrms, watt, vpp
 
+    def __str__(self):
+        s = 'db={}\nvp={}\nvrms={}\nwatt={}\nvpp={}'
+        return s.format(*self.get_values())
 
 if __name__ == '__main__':
     a = dBm()
