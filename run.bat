@@ -1,1 +1,1 @@
-\python39\python.exe conversion.py
+\python310\python.exe conversion.py
