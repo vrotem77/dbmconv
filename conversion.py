@@ -2,10 +2,10 @@
 import os, sys
 from pathlib import Path
 from dbm import dBm
-from PySide2.QtWidgets import QApplication, QWidget, QFileDialog, QShortcut
-from PySide2.QtCore import QFile
-from PySide2.QtUiTools import QUiLoader
-from PySide2.QtGui import QKeySequence
+from PySide6.QtWidgets import QApplication, QWidget, QFileDialog, QShortcut
+from PySide6.QtCore import QFile
+from PySide6.QtUiTools import QUiLoader
+from PySide6.QtGui import QKeySequence
 from functools import partial
 
 class Conversion(QWidget):
