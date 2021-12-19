@@ -2,7 +2,7 @@
 import os, sys
 from pathlib import Path
 from dbm import dBm
-from PySide6.QtWidgets import QApplication, QWidget, QFileDialog, QShortcut
+from PySide6.QtWidgets import QApplication, QWidget, QFileDialog
 from PySide6.QtCore import QFile
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtGui import QKeySequence
@@ -26,18 +26,11 @@ class Conversion(QWidget):
         self.connect_widgets()
         self.ui.edt_dbm.setText('0')
         self.update_widgets()  
-        QShortcut(QKeySequence('Ctrl+s'), self, self.save)
     
     def connect_widgets(self):
         for edt in self.EDITS:
             edt.editingFinished.connect(partial(self.set_edt, \
                 edt, self.EDITS[edt]))
-        
-    def save(self):
-        fn, pattern = QFileDialog.getSaveFileName(self)
-        if len(fn) == 0:
-            return
-        open(fn, "w").write('%s' % self.dbm)
     
     def set_edt(self, edt, f):
         f(float(edt.text()))
